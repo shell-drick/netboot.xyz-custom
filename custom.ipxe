@@ -3,9 +3,20 @@
 ### netboot.xyz-custom menu
 ###
 
-:start
-:echo boot success
-:kernel http://ftp.sheldrick.xyz/archlinux-splinter/vmlinuz-linux
-:initrd http://ftp.sheldrick.xyz/archlinux-splinter/archlinux-splinter.iso
-:imgargs loglevel=3 quiet
+:custom
+clear custom_choice
+menu Images
+item option_one ${space} Archlinux Splinter
+choose custom_choice || goto custom_exit
+echo ${cls}
+goto ${custom_choice}
+goto custom_exit
+
+:option_one
+kernel http://ftp.sheldrick.xyz/archlinux-splinter/vmlinuz-linux
+initrd http://ftp.sheldrick.xyz/archlinux-splinter/archlinux-splinter.iso
+boot || goto custom_exit
+imgargs vmlinuz loglevel=3 quiet
+
+:custom_exit
 exit 0
