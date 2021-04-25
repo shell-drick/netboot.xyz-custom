@@ -4,13 +4,8 @@
 ###
 
 :start
-echo Hello world!
-sleep 10
-
-:option_one
+:echo boot success
 :kernel http://ftp.sheldrick.xyz/archlinux-splinter
 :initrd http://ftp.sheldrick.xyz/archlinux-splinter/archlinux-splinter.iso
 :imgargs loglevel=3 quiet
-
-:custom_exit
 exit 0
