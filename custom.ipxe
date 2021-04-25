@@ -5,7 +5,7 @@
 
 :start
 :echo boot success
-:kernel http://ftp.sheldrick.xyz/archlinux-splinter
+:kernel http://ftp.sheldrick.xyz/archlinux-splinter/vmlinuz-linux
 :initrd http://ftp.sheldrick.xyz/archlinux-splinter/archlinux-splinter.iso
 :imgargs loglevel=3 quiet
 exit 0
